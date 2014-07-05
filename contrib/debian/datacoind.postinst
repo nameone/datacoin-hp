@@ -11,5 +11,8 @@ case "$1" in
 	  adduser --system --group --quiet --home /etc/datacoind \
 	    --no-create-home --disabled-login --force-badname datacoind
 	fi
+
+  chmod 700 /var/lib/datacoind
+  chown datacoind:datacoind /var/lib/datacoind
   ;;
 esac
