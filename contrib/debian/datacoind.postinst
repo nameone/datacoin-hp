@@ -12,6 +12,9 @@ case "$1" in
 	    --no-create-home --disabled-login --force-badname datacoind
 	fi
 
+  chmod 700 /etc/datacoind
+  chown datacoind:datacoind /etc/datacoind
+
   chmod 700 /var/lib/datacoind
   chown datacoind:datacoind /var/lib/datacoind
 
