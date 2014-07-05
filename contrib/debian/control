@@ -9,6 +9,6 @@ Standards-Version: 3.8.4
 
 Package: datacoind
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, makepasswd
 Description: Datacoin daemon
   Datacoin is a currency that can be used for transactions and data storage within a blockchain.

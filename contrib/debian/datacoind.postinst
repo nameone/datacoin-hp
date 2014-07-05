@@ -14,5 +14,7 @@ case "$1" in
 
   chmod 700 /var/lib/datacoind
   chown datacoind:datacoind /var/lib/datacoind
+
+  sed -e "s/rpcpassword=.*/rpcpassword=$(makepasswd -ch 16)/" -i /etc/datacoind/datacoin.conf
   ;;
 esac
