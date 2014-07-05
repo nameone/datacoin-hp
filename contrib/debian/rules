@@ -14,7 +14,7 @@ export SHELL=/bin/bash
 	dh  $@
 
 override_dh_auto_build:
-	$(MAKE) -C ../src -f makefile.unix USE_UPNP=- CXXFLAGS="-DDEFAULT_CONF_PATH=/etc/datacoind/datacoin.conf -DDEFAULT_DATA_DIR=/var/lib/datacoin/"
+	$(MAKE) -C ../src -f makefile.unix USE_UPNP=- CXXFLAGS="-DDEFAULT_CONF_PATH=/etc/datacoind/datacoin.conf -DDEFAULT_DATA_DIR=/var/lib/datacoind/"
 
 override_dh_auto_configure:
 	cd ../src; $(MAKE) -f makefile.unix clean

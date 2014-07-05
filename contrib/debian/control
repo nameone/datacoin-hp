@@ -5,8 +5,8 @@ Maintainer: Hugo Peixoto <hugo.peixoto@gmail.com>
 Build-Depends: debhelper (>= 7), libboost-thread-dev
 Standards-Version: 3.8.4
 
-Package: datacoin
+Package: datacoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Datacoin client
+Description: Datacoin daemon
   Datacoin is a currency that can be used for transactions and data storage within a blockchain.
