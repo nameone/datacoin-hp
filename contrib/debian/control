@@ -2,7 +2,9 @@ Source: datacoin
 Section: misc
 Priority: optional
 Maintainer: Hugo Peixoto <hugo.peixoto@gmail.com>
-Build-Depends: debhelper (>= 7), libboost-thread-dev
+Build-Depends: debhelper (>= 7), build-essential, libboost-dev, libssl-dev,
+  libdb++-dev, libgmp-dev, libboost-system-dev, libboost-filesystem-dev,
+  libboost-program-options-dev, libboost-thread-dev
 Standards-Version: 3.8.4
 
 Package: datacoind
