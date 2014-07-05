@@ -1018,6 +1018,14 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
+#ifdef DEFAULT_DATA_DIR
+#define STRINGIFY(x) XSTRINGIFY(x)
+#define XSTRINGIFY(x) #x
+    return STRINGIFY(DEFAULT_DATA_DIR);
+#undef STRINGIFY
+#undef XSTRINGIFY
+#else
+
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Datacoin
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Datacoin
     // Mac: ~/Library/Application Support/Datacoin
@@ -1040,6 +1048,7 @@ boost::filesystem::path GetDefaultDataDir()
 #else
     // Unix
     return pathRet / ".datacoin";
+#endif
 #endif
 #endif
 }
@@ -1080,9 +1089,17 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
+#ifdef DEFAULT_CONF_PATH
+#define STRINGIFY(x) XSTRINGIFY(x)
+#define XSTRINGIFY(x) #x
+    return STRINGIFY(DEFAULT_CONF_PATH);
+#undef STRINGIFY
+#undef XSTRINGIFY
+#else
     boost::filesystem::path pathConfigFile(GetArg("-conf", "datacoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
+#endif
 }
 
 void ReadConfigFile(map<string, string>& mapSettingsRet,

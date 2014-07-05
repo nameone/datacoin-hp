@@ -70,8 +70,8 @@ endif
 
 LIBS+= \
  -Wl,-B$(LMODE2) \
-   -l z \
-   -l dl \
+   #-l z \
+   #-l dl \
    -l pthread
 
 

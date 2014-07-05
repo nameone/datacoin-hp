@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = purge ]; then
+	if ! getent passwd datacoind > /dev/null ; then
+    deluser --system datacoind || echo "Could not remove datacoind user."
+  fi
+
+	if ! getent group datacoind > /dev/null ; then
+    delgroup --system datacoind || echo "Could not remove datacoind group."
+  fi
+fi

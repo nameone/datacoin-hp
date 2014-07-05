@@ -1,0 +1,13 @@
+# datacoind - Datacoin daemon
+
+description "datacoin daemon"
+
+start on (started networking)
+stop on runlevel [!2345]
+
+respawn
+
+setgid datacoind
+setuid datacoind
+
+exec /usr/bin/datacoind
