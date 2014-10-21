@@ -1,7 +1,7 @@
 datacoin-hp
 ===========
 
-High-performance version of datacoin (primecoin-hp fork).
+High-performance version of Datacoin (Primecoin-HP fork).
 
 
 Primecoin High Performance Version
